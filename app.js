@@ -126,6 +126,17 @@ $(document).keyup(async () => {
     }
 })
 
+const startGame = async ()=>{
+    //this is written to stop the further press of any key and further starting the game
+    if (gameStarted == false) {
+        gameStarted = true;
+        await computerMove();
+    } else {
+        alert('game is already started');
+    }
+}
+
+
 //for mouse click event on the box
 $('.box').click(async (evt) => {
     if (seqArray.length != 0) {
